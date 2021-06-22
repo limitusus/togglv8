@@ -75,11 +75,11 @@ def file_is_xls(filename)
 end
 
 class Testing
-  API_TOKEN = ENV['API_TOKEN'] || '4880adbe1bee9a241fa08070d33bd49f'
-  EMAIL     = ENV['EMAIL']     || 'togglv8@mailinator.com'
-  USERNAME  = ENV['USERNAME']  || 'togglv8'
-  PASSWORD  = ENV['PASSWORD']  || 'togglv8'
-  USER_ID   = (ENV['USER_ID']  || 1820939).to_i
+  API_TOKEN = ENV['TOGGL_API_TOKEN'] || ENV['API_TOKEN'] || '4880adbe1bee9a241fa08070d33bd49f'
+  EMAIL     = ENV['TOGGL_EMAIL'] || ENV['EMAIL'] || 'togglv8@mailinator.com'
+  USERNAME  = ENV['TOGGL_USERNAME'] || ENV['USERNAME'] || 'togglv8'
+  PASSWORD  = ENV['TOGGL_PASSWORD'] || ENV['PASSWORD'] || 'togglv8'
+  USER_ID   = (ENV['TOGGL_USER_ID'] || ENV['USER_ID'] || 1820939).to_i
 
   OTHER_EMAIL    = ENV['OTHER_EMAIL']    || 'pr5zwux59w@snkmail.com'
   OTHER_USERNAME = ENV['OTHER_USERNAME'] || 'Pr5zwux59w'
