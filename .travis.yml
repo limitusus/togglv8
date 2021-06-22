@@ -10,7 +10,7 @@ script: bundle exec rspec --format documentation
 cache: bundler
 branches:
   only:
-    - master
+    - main
 addons:
   code_climate:
     repo_token: eb44970f9efc497fb68c6ec1ce051dea530776b6a5bbe75e57734625f761ac86
