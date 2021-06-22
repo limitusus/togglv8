@@ -18,7 +18,7 @@ See [CHANGELOG](CHANGELOG.md) for a summary of notable changes in each version.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'togglv8'
+gem 'togglv8-limitusus'
 ```
 
 And then execute:
@@ -27,7 +27,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install togglv8
+    $ gem install togglv8-limitusus
 
 ## Initialization
 
