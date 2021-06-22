@@ -41,6 +41,7 @@ describe 'Time Entries' do
 
     it 'gets a time entry' do
       retrieved_time_entry = @toggl.get_time_entry(@time_entry['id'])
+      retrieved_time_entry.delete('guid')
 
       ['start', 'stop'].each do |key|
         expect(retrieved_time_entry[key]).to eq_ts @time_entry[key]
@@ -70,8 +71,7 @@ describe 'Time Entries' do
       deleted_time_entry = @toggl.delete_time_entry(@time_entry['id'])
       expect(deleted_time_entry).to eq "[#{ @time_entry['id'] }]"
 
-      zombie_time_entry = @toggl.get_time_entry(@time_entry['id'])
-      expect(zombie_time_entry.has_key?('server_deleted_at')).to eq true
+      expect { @toggl.get_time_entry(@time_entry['id']) }.to raise_error(RuntimeError, 'HTTP Status: 404')
     end
   end
 
@@ -111,6 +111,7 @@ describe 'Time Entries' do
 
     it 'gets a time entry' do
       retrieved_time_entry = @toggl.get_time_entry(@time_entry['id'])
+      retrieved_time_entry.delete('guid')
 
       ['start', 'stop'].each do |key|
         expect(retrieved_time_entry[key]).to eq_ts @time_entry[key]
@@ -140,8 +141,7 @@ describe 'Time Entries' do
       deleted_time_entry = @toggl.delete_time_entry(@time_entry['id'])
       expect(deleted_time_entry).to eq "[#{ @time_entry['id'] }]"
 
-      zombie_time_entry = @toggl.get_time_entry(@time_entry['id'])
-      expect(zombie_time_entry.has_key?('server_deleted_at')).to eq true
+      expect { @toggl.get_time_entry(@time_entry['id']) }.to raise_error(RuntimeError, 'HTTP Status: 404')
     end
   end
 
@@ -209,6 +209,7 @@ describe 'Time Entries' do
       time_entry_current = @toggl.get_current_time_entry
       # get current time entry by id
       time_entry_by_id = @toggl.get_time_entry(running_time_entry['id'])
+      time_entry_by_id.delete('guid')
 
       # compare two methods of getting current time entry
       expect(time_entry_current).to eq time_entry_by_id
