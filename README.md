@@ -147,7 +147,7 @@ Also available on [DocumentUp](https://documentup.com/kanet77/togglv8)
 
 ## Contributing
 
-1. Fork it ( https://github.com/kanet77/togglv8/fork )
+1. Fork it ( https://github.com/limitusus/togglv8/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -158,3 +158,4 @@ Pull Requests that include tests are **much** more likely to be accepted and mer
 ## License
 
 Copyright (c) 2013-2016 Tom Kane. Released under the [MIT License](http://opensource.org/licenses/mit-license.php). See [LICENSE.txt](LICENSE.txt) for details.
+Copyright (c) 2021 Tomoya Kabe. Forked from Tom's repostiory.
