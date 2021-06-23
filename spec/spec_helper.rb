@@ -17,6 +17,10 @@ RSpec.configure do |config|
   config.filter_run_excluding :pro_account unless ENV['TOGGL_PRO_ACCOUNT']
   config.run_all_when_everything_filtered = true
 
+  config.color = true
+  config.tty = true
+  config.formatter = :documentation
+
   config.order = :random
   Kernel.srand config.seed
 
